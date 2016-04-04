@@ -27,7 +27,6 @@ else
         if ((success_count.to_f/total_tests.to_f)*100).to_i >= (yml_file["PreProdEnv"]["percentage"])
                 puts "Code will Deploy to PreProd Environment"
         else
-                puts  "Code will not Deploy to PreProd Environment"
-                exec("ech")
+                raise  "Code will not Deploy to PreProd Environment"
         end
 end
