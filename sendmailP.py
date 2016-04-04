@@ -31,7 +31,7 @@ while(total_builds):
         fail=data['actions'][-1]['failCount']
         succ=total_count-fail
         perc = "%.1f"%((succ/float(total_count))*100)
-        if float(perc)>=Prod_p:
+        if float(perc)>=prod_p:
             comment='Yes'
         else:
             comment='No'
