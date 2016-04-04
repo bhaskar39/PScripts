@@ -18,7 +18,7 @@ msg = MIMEMultipart('alternative')
 
 ht="<center><h2>Last 10 Build Results from "+project_name+"</h2>"
 ht+="<table style='border:1px solid grey;'>"
-ht+="<tr><th style='width:100px;height:35px'>#Build</th><th style='width:100px'>#Success</th><th style='width:100px'>#Fail</th><th style='width:100px;height:35px'>PassPercent</th><th>Deploy to TestEnv</th></tr>"
+ht+="<tr><th style='width:100px;height:35px'>#Build</th><th style='width:100px'>#Success</th><th style='width:100px'>#Fail</th><th style='height:35px'>PassPercent</th><th>Deploy to PreProdEnv</th></tr>"
 while(total_builds):
     if count==10:
         break
