@@ -28,6 +28,6 @@ else
                 puts "Code will Deploy to Prod Environment"
         else
                 puts "Code will not Deploy to Prod Environment"
-                abort("pollo")
+                exec("exit 1")
         end
 end
