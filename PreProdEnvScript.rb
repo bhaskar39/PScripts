@@ -11,7 +11,7 @@ if result==true
                         temp = line.split(" ")
                         total_tests = temp[2].chop
                         failed_tests = temp[4].chop
-                        success_count=total_tests-failed_tests
+                        success_count=total_tests.to_i - failed_tests.to_i
                 end
         end
 else
