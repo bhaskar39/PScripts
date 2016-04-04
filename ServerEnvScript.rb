@@ -12,6 +12,7 @@ if result==true
                         temp = line.split(" ")
                         total_tests = temp[2].chop
                         failed_tests = temp[4].chop
+                        success_count=total_tests-failed_tests
                 end
         end
 else
@@ -23,8 +24,8 @@ FileUtils.rm_rf("TEST-ServerEnvTestCases.txt")
 if failed_tests == 0
         puts "Code will Deploy to Test Environment"
 else
-        puts failed_tests.to_f/total_tests.to_f
-        if ((failed_tests.to_f/total_tests.to_f)*100).to_i <= (100-yml_file["TestEnv"]["percentage"])
+        puts success_count.to_f/total_tests.to_f
+        if ((success_count.to_f/total_tests.to_f)*100).to_i >= (100-yml_file["TestEnv"]["percentage"])
                 puts "Code will Deploy to Test Environment"
         else
                 raise  "Code will not Deploy to Test Environment"
