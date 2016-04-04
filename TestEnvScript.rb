@@ -1,4 +1,3 @@
-
 require 'fileutils'
 require 'yaml'
 yml_file = YAML.load_file('config.yml')
