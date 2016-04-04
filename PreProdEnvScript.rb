@@ -27,7 +27,6 @@ else
         if ((success_count.to_f/total_tests.to_f)*100).to_i >= (yml_file["ProdEnv"]["percentage"])
                 puts "Code will Deploy to Prod Environment"
         else
-                puts "Code will not Deploy to Prod Environment"
-                exec("exit 1")
+                raise "Code will not Deploy to Prod Environment"
         end
 end
