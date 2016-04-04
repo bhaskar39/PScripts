@@ -23,8 +23,8 @@ FileUtils.rm_rf("TEST-PreProdEnvTestCases.txt")
 if failed_tests == 0
         puts "Code will Deploy to Prod Environment"
 else
-        puts success_count.to_f/total_tests.to_f
-        if ((success_count.to_f/total_tests.to_f)*100).to_i >= (100-yml_file["ProdEnv"]["percentage"])
+        puts (success_count.to_f/total_tests.to_f)*100
+        if ((success_count.to_f/total_tests.to_f)*100).to_i >= (yml_file["ProdEnv"]["percentage"])
                 puts "Code will Deploy to Prod Environment"
         else
                 raise  "Code will not Deploy to Prod Environment"
