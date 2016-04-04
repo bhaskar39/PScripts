@@ -11,6 +11,7 @@ if result==true
                         temp = line.split(" ")
                         total_tests = temp[2].chop
                         failed_tests = temp[4].chop
+                        success_count=total_tests-failed_tests
                 end
         end
 else
@@ -22,8 +23,8 @@ FileUtils.rm_rf("TEST-TestEnvTestCases.txt")
 if failed_tests == 0
         puts "Code will Deploy to PreProd Environment"
 else
-        puts failed_tests.to_f/total_tests.to_f
-        if ((failed_tests.to_f/total_tests.to_f)*100).to_i <= (100-yml_file["PreProdEnv"]["percentage"])
+        puts success_count.to_f/total_tests.to_f
+        if ((success_count.to_f/total_tests.to_f)*100).to_i >= (100-yml_file["PreProdEnv"]["percentage"])
                 puts "Code will Deploy to PreProd Environment"
         else
                 raise  "Code will not Deploy to PreProd Environment"
